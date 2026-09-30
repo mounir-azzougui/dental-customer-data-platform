@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="810" viewBox="0 0 1440 810" role="img" aria-labelledby="title desc">
+  <title id="title">Maquette anonymisée de la recherche client</title><desc id="desc">Page de sélection par identifiant, nom, téléphone et cabinet.</desc>
+  <defs><style>.bg{fill:#f7fafc}.nav{fill:#123b5d}.accent{fill:#1f8f7a}.card{fill:#fff;stroke:#d5dee8;stroke-width:2}.t1{font:700 34px Arial;fill:#fff}.t2{font:700 26px Arial;fill:#102a43}.lbl{font:700 15px Arial;fill:#52667a}.val{font:400 20px Arial;fill:#102a43}.small{font:400 15px Arial;fill:#627d98}.btn{fill:#2f6fed}.bt{font:700 18px Arial;fill:#fff}</style></defs>
+  <rect class="bg" width="1440" height="810"/><rect class="nav" width="1440" height="110"/>
+  <text class="t1" x="70" y="68">Recherche client</text><text class="small" x="1370" y="66" text-anchor="end" fill="#d9eaf7">MAQUETTE ANONYMISÉE</text>
+  <text class="t2" x="70" y="175">Sélectionner un dossier</text><text class="small" x="70" y="205">Utilisez un ou plusieurs critères pour retrouver un client.</text>
+  <g transform="translate(70 250)"><rect class="card" rx="14" width="300" height="115"/><text class="lbl" x="24" y="34">IDENTIFIANT CLIENT</text><text class="val" x="24" y="78">DEMO-001</text></g>
+  <g transform="translate(400 250)"><rect class="card" rx="14" width="300" height="115"/><text class="lbl" x="24" y="34">PRÉNOM ET NOM</text><text class="val" x="24" y="78">Client démonstration</text></g>
+  <g transform="translate(730 250)"><rect class="card" rx="14" width="300" height="115"/><text class="lbl" x="24" y="34">TÉLÉPHONE</text><text class="val" x="24" y="78">Numéro synthétique</text></g>
+  <g transform="translate(1060 250)"><rect class="card" rx="14" width="300" height="115"/><text class="lbl" x="24" y="34">CABINET</text><text class="val" x="24" y="78">Lille</text></g>
+  <g transform="translate(70 420)"><rect class="card" rx="18" width="1290" height="250"/><text class="t2" x="35" y="55">Résultat de la recherche</text><line x1="35" y1="85" x2="1255" y2="85" stroke="#d5dee8" stroke-width="2"/>
+    <text class="lbl" x="40" y="125">ID</text><text class="lbl" x="210" y="125">CLIENT</text><text class="lbl" x="520" y="125">CABINET</text><text class="lbl" x="780" y="125">CONTACT DISPONIBLE</text><text class="lbl" x="1080" y="125">STATUT</text>
+    <rect x="25" y="145" width="1240" height="72" rx="10" fill="#eef6ff"/><text class="val" x="40" y="190">DEMO-001</text><text class="val" x="210" y="190">Client démonstration</text><text class="val" x="520" y="190">Lille</text><text class="val" x="780" y="190">Oui</text><text class="val" x="1080" y="190">Actif</text>
+  </g>
+  <rect class="btn" x="1110" y="710" rx="12" width="250" height="58"/><text class="bt" x="1235" y="747" text-anchor="middle">Ouvrir la fiche</text>
+</svg>
+

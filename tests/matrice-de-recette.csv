@@ -1,0 +1,28 @@
+ID;Domaine;Règle;Scénario;Résultat attendu;Priorité;Statut public
+FIC-001;Contrôle fichier;Présence de l'en-tête;Le fichier commence par une ligne 000;Le traitement poursuit les contrôles;Critique;À exécuter
+FIC-002;Contrôle fichier;Présence de l'en-tête;La ligne 000 est absente;Le fichier est refusé et l'erreur est tracée;Critique;À exécuter
+FIC-003;Contrôle fichier;Présence du pied;Le fichier se termine par une ligne 999;Le traitement poursuit les contrôles;Critique;À exécuter
+FIC-004;Contrôle fichier;Présence du pied;La ligne 999 est absente;Le fichier est refusé et l'erreur est tracée;Critique;À exécuter
+FIC-005;Contrôle fichier;Type de fichier;Le champ TYPE_FICHIER vaut CLIENT;Le traitement poursuit les contrôles;Critique;À exécuter
+FIC-006;Contrôle fichier;Type de fichier;Le champ TYPE_FICHIER contient une autre valeur;Le fichier est refusé et l'erreur est tracée;Critique;À exécuter
+FIC-007;Contrôle fichier;Nombre de lignes;Le compteur 999 correspond au nombre réel de lignes;Le fichier est déclaré conforme;Critique;À exécuter
+FIC-008;Contrôle fichier;Nombre de lignes;Le compteur 999 est incorrect;Le fichier est refusé et l'erreur est tracée;Critique;À exécuter
+CPT-001;Compte;Champs obligatoires;Tous les champs obligatoires sont renseignés;Le compte est intégré;Haute;À exécuter
+CPT-002;Compte;Cabinet autorisé;Le code cabinet appartient à la liste de référence;Le compte est intégré;Haute;À exécuter
+CPT-003;Compte;Cabinet autorisé;Le code cabinet est inconnu;Le compte est rejeté avec un motif explicite;Haute;À exécuter
+CLI-001;Client;Intégrité référentielle;Le compte parent existe;Le client est intégré;Critique;À exécuter
+CLI-002;Client;Intégrité référentielle;Le compte parent n'existe pas;Le client est rejeté avec un motif explicite;Critique;À exécuter
+EML-001;Email;Intégrité référentielle;Le client parent existe et l'email est valide;L'email est intégré;Haute;À exécuter
+EML-002;Email;Format minimal;L'adresse ne contient pas le caractère @;L'email est rejeté avec un motif explicite;Haute;À exécuter
+EML-003;Email;Intégrité référentielle;Le client parent n'existe pas;L'email est rejeté avec un motif explicite;Critique;À exécuter
+ADR-001;Adresse;Intégrité référentielle;Le client parent existe;L'adresse est intégrée;Haute;À exécuter
+ADR-002;Adresse;Intégrité référentielle;Le client parent n'existe pas;L'adresse est rejetée avec un motif explicite;Critique;À exécuter
+TEL-001;Téléphone;Cardinalité;Le client possède un fixe et un portable;Les deux téléphones sont intégrés;Haute;À exécuter
+TEL-002;Téléphone;Cardinalité;Le client possède deux téléphones du même type;Le doublon fonctionnel est rejeté;Haute;À exécuter
+TEL-003;Téléphone;Intégrité référentielle;Le client parent n'existe pas;Le téléphone est rejeté avec un motif explicite;Critique;À exécuter
+TRC-001;Traçabilité;Suivi du fichier;Le traitement démarre;Le nom du fichier, la date et le statut sont enregistrés;Critique;À exécuter
+TRC-002;Traçabilité;Origine des données;Une ligne est intégrée dans le DWH;L'identifiant du fichier source est conservé;Haute;À exécuter
+TRC-003;Traçabilité;Motif de rejet;Une règle de qualité échoue;La ligne et le motif sont consultables dans la table de rejet;Haute;À exécuter
+DEL-001;Flux delta;Création;Une action C porte une nouvelle clé;L'enregistrement est créé;Haute;À documenter
+DEL-002;Flux delta;Mise à jour;Une action M porte une clé existante;L'enregistrement est mis à jour sans perdre sa date de création;Haute;À documenter
+DEL-003;Flux delta;Suppression;Une action S porte une clé existante;La règle de suppression convenue est appliquée et tracée;Haute;À documenter

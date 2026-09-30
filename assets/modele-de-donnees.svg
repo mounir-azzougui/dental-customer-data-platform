@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="900" viewBox="0 0 1500 900" role="img" aria-labelledby="title desc">
+  <title id="title">Modèle logique de la base clients</title>
+  <desc id="desc">Relations entre Compte, Client, Email, Adresse, Téléphone et les tables de suivi et de rejet.</desc>
+  <defs>
+    <style>
+      .bg{fill:#f7fafc}.title{font:700 38px Arial;fill:#102a43}.sub{font:400 18px Arial;fill:#52667a}
+      .entity{fill:#fff;stroke:#9fb3c8;stroke-width:2}.core{fill:#eaf3ff;stroke:#2f6fed;stroke-width:3}.support{fill:#fff4e5;stroke:#d97706;stroke-width:2.5}
+      .head{fill:#102a43}.headcore{fill:#2f6fed}.headsupport{fill:#d97706}.h{font:700 20px Arial;fill:#fff}.f{font:400 15px Arial;fill:#334e68}.pk{font:700 15px Arial;fill:#1f8f7a}
+      .rel{stroke:#486581;stroke-width:3;fill:none}.card{font:700 16px Arial;fill:#334e68}.note{font:400 15px Arial;fill:#627d98}
+    </style>
+  </defs>
+  <rect class="bg" width="1500" height="900"/>
+  <text class="title" x="70" y="70">Modèle logique de la base clients</text>
+  <text class="sub" x="70" y="105">Le client relie le compte aux informations de contact</text>
+
+  <g transform="translate(90 195)">
+    <rect class="core" rx="15" width="300" height="245"/><path class="headcore" d="M15 0H285Q300 0 300 15V58H0V15Q0 0 15 0Z"/>
+    <text class="h" x="150" y="37" text-anchor="middle">DWH_COMPTE</text>
+    <text class="pk" x="22" y="92">PK  ID_COMPTE</text><text class="f" x="22" y="122">STATUT_COMPTE</text><text class="f" x="22" y="150">TYPE_COMPTE</text><text class="f" x="22" y="178">CABINET</text><text class="f" x="22" y="206">ID_FICHIER</text><text class="f" x="22" y="232">DATES DE TRAÇABILITÉ</text>
+  </g>
+
+  <g transform="translate(600 165)">
+    <rect class="core" rx="15" width="320" height="315"/><path class="headcore" d="M15 0H305Q320 0 320 15V58H0V15Q0 0 15 0Z"/>
+    <text class="h" x="160" y="37" text-anchor="middle">DWH_CLIENT</text>
+    <text class="pk" x="22" y="92">PK  ID_CLIENT</text><text class="pk" x="22" y="120">FK  ID_COMPTE</text><text class="f" x="22" y="150">STATUT · TYPE · CIVILITÉ</text><text class="f" x="22" y="178">PRÉNOM · NOM</text><text class="f" x="22" y="206">DATE DE NAISSANCE</text><text class="f" x="22" y="234">SEXE · MUTUELLE</text><text class="f" x="22" y="262">ID_FICHIER</text><text class="f" x="22" y="290">DATES DE TRAÇABILITÉ</text>
+  </g>
+
+  <path class="rel" d="M390 315H600"/><text class="card" x="418" y="302">1</text><text class="card" x="570" y="302">0..n</text>
+
+  <g transform="translate(1060 130)">
+    <rect class="entity" rx="15" width="335" height="190"/><path class="head" d="M15 0H320Q335 0 335 15V54H0V15Q0 0 15 0Z"/>
+    <text class="h" x="168" y="35" text-anchor="middle">DWH_EMAIL</text>
+    <text class="pk" x="22" y="85">FK  ID_CLIENT</text><text class="f" x="22" y="115">EMAIL</text><text class="f" x="22" y="143">STATUT</text><text class="f" x="22" y="171">ID_FICHIER · DATES</text>
+  </g>
+
+  <g transform="translate(1060 365)">
+    <rect class="entity" rx="15" width="335" height="210"/><path class="head" d="M15 0H320Q335 0 335 15V54H0V15Q0 0 15 0Z"/>
+    <text class="h" x="168" y="35" text-anchor="middle">DWH_ADRESSE</text>
+    <text class="pk" x="22" y="85">FK  ID_CLIENT</text><text class="f" x="22" y="115">LIGNES D’ADRESSE</text><text class="f" x="22" y="143">VILLE · CODE POSTAL</text><text class="f" x="22" y="171">PAYS · QUALITÉ</text><text class="f" x="22" y="199">ID_FICHIER · DATES</text>
+  </g>
+
+  <g transform="translate(1060 620)">
+    <rect class="entity" rx="15" width="335" height="210"/><path class="head" d="M15 0H320Q335 0 335 15V54H0V15Q0 0 15 0Z"/>
+    <text class="h" x="168" y="35" text-anchor="middle">DWH_TELEPHONE</text>
+    <text class="pk" x="22" y="85">FK  ID_CLIENT</text><text class="f" x="22" y="115">NUMÉRO</text><text class="f" x="22" y="143">STATUT · FAVORI</text><text class="f" x="22" y="171">TYPE</text><text class="f" x="22" y="199">ID_FICHIER · DATES</text>
+  </g>
+
+  <path class="rel" d="M920 270H990V225H1060"/><text class="card" x="940" y="257">1</text><text class="card" x="1020" y="213">0..1</text>
+  <path class="rel" d="M920 320H1010V470H1060"/><text class="card" x="940" y="307">1</text><text class="card" x="1020" y="458">0..1</text>
+  <path class="rel" d="M920 400H980V725H1060"/><text class="card" x="940" y="388">1</text><text class="card" x="1015" y="713">0..2</text>
+
+  <g transform="translate(90 555)">
+    <rect class="support" rx="15" width="330" height="185"/><path class="headsupport" d="M15 0H315Q330 0 330 15V54H0V15Q0 0 15 0Z"/>
+    <text class="h" x="165" y="35" text-anchor="middle">SUIVI DES FICHIERS</text>
+    <text class="f" x="22" y="88">Nom du fichier</text><text class="f" x="22" y="116">Date d’intégration</text><text class="f" x="22" y="144">Statut du traitement</text><text class="f" x="22" y="172">Motif d’échec</text>
+  </g>
+
+  <g transform="translate(500 625)">
+    <rect class="support" rx="15" width="390" height="170"/><path class="headsupport" d="M15 0H375Q390 0 390 15V54H0V15Q0 0 15 0Z"/>
+    <text class="h" x="195" y="35" text-anchor="middle">TABLES DE REJET</text>
+    <text class="f" x="22" y="90">Une table par entité</text><text class="f" x="22" y="120">Ligne source et règle enfreinte</text><text class="f" x="22" y="150">Analyse et correction ultérieures</text>
+  </g>
+
+  <text class="note" x="90" y="855">Schéma public simplifié — aucun nom de serveur, identifiant technique ou donnée personnelle.</text>
+</svg>

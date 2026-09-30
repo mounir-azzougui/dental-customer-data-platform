@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="810" viewBox="0 0 1440 810" role="img" aria-labelledby="title desc">
+  <title id="title">Maquette anonymisée de la fiche client</title><desc id="desc">Fiche synthétique présentant identité, cabinet, mutuelle et coordonnées.</desc>
+  <defs><style>.bg{fill:#f7fafc}.nav{fill:#123b5d}.card{fill:#fff;stroke:#d5dee8;stroke-width:2}.pill{fill:#e8f7f4}.warn{fill:#fff4e5}.t1{font:700 34px Arial;fill:#fff}.t2{font:700 24px Arial;fill:#102a43}.lbl{font:700 14px Arial;fill:#627d98}.val{font:400 19px Arial;fill:#102a43}.big{font:700 26px Arial;fill:#102a43}.small{font:400 14px Arial;fill:#627d98}</style></defs>
+  <rect class="bg" width="1440" height="810"/><rect class="nav" width="1440" height="110"/><text class="t1" x="70" y="68">Fiche client</text><text class="small" x="1370" y="66" text-anchor="end" fill="#d9eaf7">DONNÉES SYNTHÉTIQUES</text>
+  <g transform="translate(70 155)"><rect class="card" rx="18" width="410" height="150"/><text class="lbl" x="28" y="38">CLIENT</text><text class="big" x="28" y="79">Client démonstration</text><text class="val" x="28" y="116">DEMO-001 · Actif</text></g>
+  <g transform="translate(515 155)"><rect class="pill" rx="18" width="260" height="150"/><text class="lbl" x="28" y="38">CABINET</text><text class="big" x="28" y="86">Lille</text></g>
+  <g transform="translate(810 155)"><rect class="pill" rx="18" width="260" height="150"/><text class="lbl" x="28" y="38">MUTUELLE</text><text class="big" x="28" y="86">Renseignée</text></g>
+  <g transform="translate(1105 155)"><rect class="warn" rx="18" width="265" height="150"/><text class="lbl" x="28" y="38">COMPLÉTUDE</text><text class="big" x="28" y="86">4 / 5</text><text class="small" x="28" y="116">Adresse à compléter</text></g>
+  <g transform="translate(70 350)"><rect class="card" rx="18" width="610" height="340"/><text class="t2" x="30" y="48">Identité</text>
+    <text class="lbl" x="30" y="95">CIVILITÉ</text><text class="val" x="250" y="95">Non renseignée</text><text class="lbl" x="30" y="140">DATE DE NAISSANCE</text><text class="val" x="250" y="140">Date synthétique</text><text class="lbl" x="30" y="185">TYPE DE CLIENT</text><text class="val" x="250" y="185">Particulier</text><text class="lbl" x="30" y="230">SEXE</text><text class="val" x="250" y="230">Non renseigné</text><text class="lbl" x="30" y="275">COMPTE</text><text class="val" x="250" y="275">ACC-DEMO-001</text>
+  </g>
+  <g transform="translate(720 350)"><rect class="card" rx="18" width="650" height="340"/><text class="t2" x="30" y="48">Coordonnées</text>
+    <text class="lbl" x="30" y="95">EMAIL</text><text class="val" x="245" y="95">client@example.test</text><text class="lbl" x="30" y="140">TÉLÉPHONE FAVORI</text><text class="val" x="245" y="140">Numéro synthétique</text><text class="lbl" x="30" y="185">TÉLÉPHONE SECONDAIRE</text><text class="val" x="245" y="185">Non renseigné</text><text class="lbl" x="30" y="230">ADRESSE</text><text class="val" x="245" y="230">À compléter</text><text class="lbl" x="30" y="275">PAYS</text><text class="val" x="245" y="275">France</text>
+  </g>
+  <text class="small" x="70" y="754">Cette maquette ne contient aucune donnée issue du projet d’origine.</text>
+</svg>
+

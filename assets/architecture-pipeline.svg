@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Architecture du pipeline de données clients</title>
+  <desc id="desc">Flux du fichier client vers Semarchy, les couches ACQ, SAS et DWH Oracle, puis Power BI, avec suivi et rejets.</desc>
+  <defs>
+    <style>
+      .bg{fill:#f7fafc}.title{font:700 38px Arial;fill:#102a43}.sub{font:400 18px Arial;fill:#52667a}
+      .box{fill:#fff;stroke:#bcccdc;stroke-width:2}.box-blue{fill:#eaf3ff;stroke:#2f6fed;stroke-width:2.5}
+      .box-teal{fill:#e8f7f4;stroke:#1f8f7a;stroke-width:2.5}.box-warn{fill:#fff4e5;stroke:#d97706;stroke-width:2.5}
+      .h{font:700 22px Arial;fill:#102a43}.t{font:400 17px Arial;fill:#334e68}.small{font:400 15px Arial;fill:#52667a}
+      .arrow{stroke:#486581;stroke-width:4;fill:none;marker-end:url(#arrow)}.dash{stroke:#d97706;stroke-width:3;stroke-dasharray:10 8;fill:none;marker-end:url(#arrowWarn)}
+      .lane{font:700 16px Arial;fill:#627d98;letter-spacing:1px}
+    </style>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#486581"/></marker>
+    <marker id="arrowWarn" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#d97706"/></marker>
+  </defs>
+  <rect class="bg" width="1600" height="900"/>
+  <text class="title" x="80" y="72">Architecture du pipeline de données clients</text>
+  <text class="sub" x="80" y="108">Séparation des étapes d’acquisition, de contrôle, d’intégration et de restitution</text>
+
+  <text class="lane" x="80" y="162">SOURCE</text>
+  <rect class="box" x="80" y="185" rx="18" width="250" height="150"/>
+  <text class="h" x="205" y="235" text-anchor="middle">F_CLIENT_*.txt</text>
+  <text class="t" x="205" y="270" text-anchor="middle">Flux hiérarchique</text>
+  <text class="small" x="205" y="300" text-anchor="middle">000 · 100 · 200 · 203</text>
+  <text class="small" x="205" y="322" text-anchor="middle">204 · 205 · 999</text>
+
+  <text class="lane" x="395" y="162">INTÉGRATION</text>
+  <rect class="box-blue" x="395" y="185" rx="18" width="260" height="150"/>
+  <text class="h" x="525" y="235" text-anchor="middle">Semarchy xDI</text>
+  <text class="t" x="525" y="270" text-anchor="middle">Orchestration</text>
+  <text class="small" x="525" y="300" text-anchor="middle">Chargement et contrôles</text>
+
+  <text class="lane" x="730" y="162">ACQUISITION</text>
+  <rect class="box" x="730" y="185" rx="18" width="240" height="150"/>
+  <text class="h" x="850" y="235" text-anchor="middle">Table ACQ</text>
+  <text class="t" x="850" y="270" text-anchor="middle">Lignes brutes</text>
+  <text class="small" x="850" y="300" text-anchor="middle">Nom de fichier · Row ID</text>
+
+  <text class="lane" x="1045" y="162">CONTRÔLES</text>
+  <rect class="box-warn" x="1045" y="185" rx="18" width="450" height="150"/>
+  <text class="h" x="1270" y="228" text-anchor="middle">Contrôle de conformité</text>
+  <text class="small" x="1270" y="264" text-anchor="middle">En-tête · Pied · Type CLIENT</text>
+  <text class="small" x="1270" y="290" text-anchor="middle">Nombre de lignes déclaré</text>
+  <text class="small" x="1270" y="316" text-anchor="middle">Statut OK ou KO</text>
+
+  <path class="arrow" d="M330 260H395"/><path class="arrow" d="M655 260H730"/><path class="arrow" d="M970 260H1045"/>
+
+  <text class="lane" x="190" y="455">PRÉPARATION</text>
+  <rect class="box-teal" x="190" y="480" rx="18" width="530" height="160"/>
+  <text class="h" x="455" y="525" text-anchor="middle">Tables SAS</text>
+  <text class="small" x="455" y="565" text-anchor="middle">COMPTE · CLIENT · EMAIL</text>
+  <text class="small" x="455" y="592" text-anchor="middle">ADRESSE · TÉLÉPHONE</text>
+  <text class="small" x="455" y="620" text-anchor="middle">Séparation par type d’enregistrement</text>
+
+  <text class="lane" x="790" y="455">STOCKAGE ORACLE</text>
+  <rect class="box-blue" x="790" y="480" rx="18" width="530" height="160"/>
+  <text class="h" x="1055" y="525" text-anchor="middle">Tables DWH</text>
+  <text class="small" x="1055" y="565" text-anchor="middle">COMPTE → CLIENT</text>
+  <text class="small" x="1055" y="592" text-anchor="middle">EMAIL · ADRESSE · TÉLÉPHONE</text>
+  <text class="small" x="1055" y="620" text-anchor="middle">Types, clés et règles de cohérence</text>
+
+  <path class="arrow" d="M1270 335V390H455V480"/>
+  <path class="arrow" d="M720 560H790"/>
+
+  <rect class="box-warn" x="80" y="718" rx="16" width="330" height="115"/>
+  <text class="h" x="245" y="760" text-anchor="middle">Suivi des fichiers</text>
+  <text class="small" x="245" y="792" text-anchor="middle">Date · Statut · Motif</text>
+
+  <rect class="box-warn" x="475" y="718" rx="16" width="330" height="115"/>
+  <text class="h" x="640" y="760" text-anchor="middle">Tables de rejet</text>
+  <text class="small" x="640" y="792" text-anchor="middle">Ligne · Entité · Raison</text>
+
+  <rect class="box-teal" x="985" y="705" rx="18" width="430" height="140"/>
+  <text class="h" x="1200" y="752" text-anchor="middle">Power BI</text>
+  <text class="t" x="1200" y="785" text-anchor="middle">Connexion ODBC</text>
+  <text class="small" x="1200" y="814" text-anchor="middle">Front-office · Back-office</text>
+
+  <path class="dash" d="M1160 335V390H245V718"/>
+  <path class="dash" d="M1055 640V670H640V718"/>
+  <path class="arrow" d="M1200 640V705"/>
+</svg>
+
